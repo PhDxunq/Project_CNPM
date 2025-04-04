@@ -1,0 +1,63 @@
+module com.example.phongvanrestaurant {
+    requires javafx.controls;
+    requires javafx.fxml;
+    requires java.sql;
+    requires jbcrypt;
+
+
+    opens com.example.phongvanrestaurant to javafx.fxml;
+    opens com.example.phongvanrestaurant.components to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Cashier to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Cashier.Inventory to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Cashier.Table to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Cashier.Orders to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Cashier.Account to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Cashier.Orders.OrderDetails to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin.Account to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin.Staff to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin.Timesheet to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin.Inventory to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin.Orders to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin.Table to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Admin.Orders.OrderDetails to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Staff to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Kitchen to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Kitchen.Orders to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Kitchen.Orders.OrderDetails to javafx.fxml;
+    opens com.example.phongvanrestaurant.components.Kitchen.Account to javafx.fxml;
+
+    exports com.example.phongvanrestaurant;
+    exports com.example.phongvanrestaurant.components;
+    exports com.example.phongvanrestaurant.components.Admin;
+    exports com.example.phongvanrestaurant.components.Staff;
+    exports com.example.phongvanrestaurant.components.Admin.Account;
+    exports com.example.phongvanrestaurant.components.Admin.Staff;
+    exports com.example.phongvanrestaurant.components.Admin.Timesheet;
+    exports com.example.phongvanrestaurant.components.Admin.Inventory;
+    exports com.example.phongvanrestaurant.components.Admin.Orders;
+    exports com.example.phongvanrestaurant.components.Admin.Table;
+    exports com.example.phongvanrestaurant.components.Admin.Orders.OrderDetails;
+    exports com.example.phongvanrestaurant.components.Cashier.Orders;
+    exports com.example.phongvanrestaurant.components.Cashier.Orders.OrderDetails;
+    exports com.example.phongvanrestaurant.components.Cashier.Table;
+    exports com.example.phongvanrestaurant.components.Cashier.Account;
+    exports com.example.phongvanrestaurant.components.Cashier.Inventory;
+    exports com.example.phongvanrestaurant.models;
+    opens com.example.phongvanrestaurant.models to javafx.fxml;
+    exports com.example.phongvanrestaurant.components.Staff.Orders;
+    opens com.example.phongvanrestaurant.components.Staff.Orders to javafx.fxml;
+    exports com.example.phongvanrestaurant.components.Staff.Menu;
+    opens com.example.phongvanrestaurant.components.Staff.Menu to javafx.fxml;
+    exports com.example.phongvanrestaurant.components.Staff.Account;
+    opens com.example.phongvanrestaurant.components.Staff.Account to javafx.fxml;
+    exports com.example.phongvanrestaurant.components.Staff.Orders.OrderDetails;
+    opens com.example.phongvanrestaurant.components.Staff.Orders.OrderDetails to javafx.fxml;
+    exports com.example.phongvanrestaurant.components.Staff.Table;
+    opens com.example.phongvanrestaurant.components.Staff.Table to javafx.fxml;
+    exports com.example.phongvanrestaurant.components.Cashier;
+    exports com.example.phongvanrestaurant.components.Kitchen;
+    exports com.example.phongvanrestaurant.components.Kitchen.Orders;
+    exports com.example.phongvanrestaurant.components.Kitchen.Orders.OrderDetails;
+    exports com.example.phongvanrestaurant.components.Kitchen.Account;
+}

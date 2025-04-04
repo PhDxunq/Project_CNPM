@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1"
+           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phongvanrestaurant.components.Cashier.Table.CashierTableController">
+    <children>
+        <AnchorPane style="-fx-background-color: linear-gradient(to bottom, #f8f9fa, #dee2e6);">
+            <children>
+                <GridPane fx:id="gridPaneId" hgap="10.0" style="-fx-padding: 20;" vgap="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS"  />
+                        <ColumnConstraints hgrow="ALWAYS"  />
+                        <ColumnConstraints hgrow="ALWAYS"  />
+                        <ColumnConstraints hgrow="ALWAYS"  />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints vgrow="ALWAYS" />
+                        <RowConstraints vgrow="ALWAYS" />
+                        <RowConstraints vgrow="ALWAYS" />
+                    </rowConstraints>
+                </GridPane>
+
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

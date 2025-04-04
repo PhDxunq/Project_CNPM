@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phongvanrestaurant.components.Admin.Timesheet.AdminTimesheetController">
+    <children>
+        <Label layoutX="18.0" layoutY="14.0" text="Tìm kiếm nhân viên:">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="searchField" layoutX="179.0" layoutY="8.0" prefHeight="41.0" prefWidth="470.0" promptText="Tìm kiếm theo tên nhân viên">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <TableView fx:id="timesheet_table" layoutX="16.0" layoutY="55.0" prefHeight="945.0" prefWidth="1693.0" tableMenuButtonVisible="true">
+            <columns>
+                <TableColumn fx:id="timesheet_col_id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="timesheet_col_staffid" prefWidth="100.0" text="ID Nhân viên" />
+                <TableColumn fx:id="timesheet_col_fullname" prefWidth="150.0" text="Tên" />
+                <TableColumn fx:id="timesheet_col_timecheckin" prefWidth="200.0" text="Điểm danh" />
+                <TableColumn fx:id="timesheet_col_timecheckout" prefWidth="200.0" text="Check-Out" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</AnchorPane>

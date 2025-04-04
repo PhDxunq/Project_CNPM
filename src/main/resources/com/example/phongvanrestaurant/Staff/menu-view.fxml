@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.HBox?>
+<AnchorPane prefHeight="522.0" prefWidth="1000.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.phongvanrestaurant.components.Staff.Menu.MenuController">
+    <children>
+        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <!-- Thanh tiêu đề (phần trên) -->
+            <top>
+                <AnchorPane prefHeight="55.0" prefWidth="301.0" style="-fx-padding: 10; -fx-background-color: #AC101B; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
+                    <children>
+                        <Label fx:id="tableIdLabel" alignment="CENTER" contentDisplay="CENTER" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #ffffff;" text="Table ID" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+                        <Button onAction="#goBack" styleClass="nav-btntable" stylesheets="@../css/admin.css" text="Quay lại" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#doCancel" prefHeight="25.0" prefWidth="15.0" style="-fx-background-color: #ffffff;" text="X" textFill="#AC101B" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                        <Button mnemonicParsing="false" onAction="#doMinimize" prefHeight="25.0" prefWidth="15.0" style="-fx-background-color: #ffffff;" text="-" textFill="#AC101B" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="10.0" />
+                    </children>
+                </AnchorPane>
+            </top>
+
+            <!-- Cột danh mục (bên trái) -->
+            <left>
+                <AnchorPane maxWidth="200.0" prefWidth="200.0" style=" -fx-background-color: #AC101B;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button alignment="CENTER" prefHeight="50.0"
+                                prefWidth="190.0" style="-fx-background-color: #AC101B;" stylesheets="@../css/admin.css" styleClass="nav-btntable" mnemonicParsing="false" onAction="#doLogout" text="Đăng xuất" AnchorPane.bottomAnchor="10.0"
+                                AnchorPane.leftAnchor="5.0"
+                                AnchorPane.rightAnchor="5.0">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+
+                        <VBox fx:id="categoryContainer" alignment="TOP_LEFT" layoutX="2.0" layoutY="250.0" prefWidth="200.0" spacing="10" style="-fx-padding: 15; ">
+                            <!--category-->
+                        </VBox>
+
+                        <!-- Đưa TextField ra ngoài AnchorPane -->
+                        <TextField fx:id="searchField" layoutX="2.0" layoutY="200.0" prefHeight="50.0" prefWidth="200.0" promptText="Tìm kiếm sản phẩm" style="-fx-border-color: #333333; -fx-background-color: white;" />
+
+                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Image/Logo/logo200200.jpg" />
+                            </image>
+                        </ImageView>
+
+                    </children>
+                </AnchorPane>
+            </left>
+
+            <!-- Nội dung chính (phần trung tâm) -->
+            <center>
+                <!-- Dùng StackPane để quản lý các thành phần chồng lên nhau -->
+                <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                    <!-- Overlay khi giỏ hàng mở -->
+                    <StackPane fx:id="overlay" style="-fx-background-color: rgba(0, 0, 0, 0.5);" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                        <!-- Overlay có thể có nội dung hoặc để trống -->
+                    </StackPane>
+                    <!-- Nội dung chính -->
+                    <AnchorPane fx:id="mainContainer" prefHeight="429.0" prefWidth="1080.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <ScrollPane fx:id="productScrollPane" style="-fx-padding: 15;">
+                                <GridPane fx:id="productGrid" hgap="15.0" style="-fx-padding: 20 20 30 20;" vgap="15.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" />
+                                        <ColumnConstraints hgrow="ALWAYS" />
+                                        <ColumnConstraints hgrow="ALWAYS" />
+                                        <ColumnConstraints hgrow="ALWAYS" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints vgrow="ALWAYS" />
+                                        <RowConstraints vgrow="ALWAYS" />
+                                        <RowConstraints vgrow="ALWAYS" />
+                                    </rowConstraints>
+                                </GridPane>
+                            </ScrollPane>
+                        </children>
+                    </AnchorPane>
+                    <!-- Phần giỏ hàng bên phải -->
+                    <VBox fx:id="cartPane" alignment="TOP_LEFT" spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-pref-width: 500px; -fx-pref-heigth: 500px" visible="false" >
+                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Giỏ hàng" />
+                        <ScrollPane fitToHeight="true" fitToWidth="true" >
+                            <GridPane fx:id="cartGrid" gridLinesVisible="true" hgap="10" vgap="10" AnchorPane.leftAnchor="20.0" GridPane.columnSpan="2">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                    <ColumnConstraints hgrow="ALWAYS" />
+                                </columnConstraints>
+                            </GridPane>
+                        </ScrollPane>
+                        <!-- Thêm HBox để căn giữa hai nút -->
+                        <HBox alignment="CENTER" spacing="15">
+                            <Button fx:id="confirmApplicationButton" style="-fx-background-color: #CC0033; -fx-text-fill: white;" text="Xác nhận đặt hàng" />
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="15">
+                            <Button fx:id="closeCartButton" style="-fx-background-color: #CC0033; -fx-text-fill: white;" text="Thoát" />
+                        </HBox>
+
+                        <padding>
+                            <Insets top="10" right="15" bottom="20" left="25" />
+                        </padding>
+                    </VBox>
+                </StackPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

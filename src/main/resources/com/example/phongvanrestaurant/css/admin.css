@@ -1,0 +1,53 @@
+.header{
+    -fx-background-color: linear-gradient(to bottom right, #098c53, #00bfa5);
+}
+
+.nav-form{
+    -fx-background-color: linear-gradient(to bottom right, #AC101B, #de0b1a);
+}
+
+.nav-btn {
+    -fx-background-color: linear-gradient(to bottom right, #dc143c, #fa8072);
+    -fx-text-fill: white;
+
+    -fx-cursor : hand;
+    -fx-font-size: 16px;
+}
+
+.nav-btn:hover {
+    -fx-background-color: linear-gradient(to bottom , #fa8072, #dc143c);
+    -fx-text-fill: #000;
+}
+
+.white-bg {
+    -fx-background-color: white;
+}
+
+.radius {
+    -fx-background-radius: 10px;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0 ,0, 0, 0.6), 10, 0, 0, 0);
+}
+
+.nav-btntable {
+    -fx-font-size: 16px;              /* Thêm đơn vị px */
+    -fx-padding: 5px;                 /* Thêm đơn vị px */
+    -fx-font-weight: bold;
+    -fx-border-color: #ffffff;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #CC0033;
+    -fx-pref-width: 190px;            /* Thêm đơn vị px */
+}
+.nav-btntable:hover {
+     -fx-font-size: 16px;
+     -fx-padding: 5px;
+     -fx-font-weight: bold;
+     -fx-border-color: #ffffff;
+     -fx-text-fill: #ffffff;
+     -fx-background-color: #CC0033;
+     -fx-pref-width: 190px;
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.7), 10, 0, 0, 0);
+     -fx-background-color: #FF0066;
+}
